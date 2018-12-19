@@ -1,0 +1,17 @@
+package convertSpace;
+
+import java.util.Scanner;
+
+public class Test {
+	
+	public static void main(String[] args)
+	{
+	
+		Scanner in = new Scanner(System.in);
+		String w = in.nextLine();
+		
+		SwitchSpace s = new SwitchSpace(w);
+		
+		System.out.println(s.getEditedString());
+	}
+}

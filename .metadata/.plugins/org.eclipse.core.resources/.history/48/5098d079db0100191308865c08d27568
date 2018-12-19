@@ -1,0 +1,27 @@
+package beans;
+
+public class Car {
+
+	private String carname;
+	private Engine engine;
+	
+	public Car()
+	{
+		System.out.println("Car Object created");
+	}
+	public void setcarname(String cName)
+	{
+		carname = cName;
+	}
+	
+	public void setEngine(Engine e)
+	{
+		this.engine = e;
+	}
+	
+	public void printCarData()
+	{
+		System.out.println("CarName = "+carname);
+		System.out.println("ModelYear= "+engine.getModelyear());
+	}
+}

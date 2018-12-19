@@ -1,0 +1,32 @@
+package twoDimensionMatrix;
+
+public class Driver {
+	
+	public static void main(String[] args)
+	{
+		int[][] m = new int[3][5];
+		
+		int[] num = {1,0,5,2,3,4,9,0,0,10,8,7,0,11,12};
+		
+		int counter = 0;
+		
+		System.out.println(m.length);
+		System.out.println(m[0].length);
+		System.out.println(m[1].length);
+		System.out.println(m[2].length);
+		
+		
+		for(int i = 0; i<m.length; i++)
+		{
+			for (int j = 0; j<m[0].length; j++)
+			{
+				m[i][j] = num[counter];
+				counter++;
+				System.out.print(m[i][j]);
+			}
+			System.out.println();
+		}
+		
+		
+	}
+}

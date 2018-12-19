@@ -1,0 +1,26 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id = "c" class = "beans.Car">
+	
+		<property name = "carname">
+			<list>
+				<value>Audi</value>
+				<value>Benz</value>
+				<value>Toyota</value>
+			</list>
+		</property>
+		
+		<property name = "engine">
+			<list>
+				<ref bean = "e1"></ref>
+				<ref bean = "e2"></ref>
+				<ref bean = "e3"></ref>
+			</list>
+		</property>
+	
+	</bean>
+
+</beans>

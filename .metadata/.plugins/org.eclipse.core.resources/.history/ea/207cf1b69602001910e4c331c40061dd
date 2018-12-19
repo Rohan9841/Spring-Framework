@@ -1,0 +1,23 @@
+package beans;
+
+public class Car {
+	
+	private String[] carname;
+	private Engine[] eng;
+	
+	public Car()
+	{
+		System.out.println("Car object created");
+	}
+	
+	public void setCarname(String[] cName)
+	{
+		carname = cName;
+	}
+	
+	public void printCarDetails()
+	{
+		System.out.println("car name: "+carname);
+		System.out.println(("Engine model: "+ eng.getCarmodel());
+	}
+}

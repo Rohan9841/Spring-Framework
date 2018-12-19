@@ -1,0 +1,9 @@
+package roundedSubstring;
+
+public class Driver {
+	public static void main(String[] args)
+	{
+		String s1 = "WATEEWOTTLE";
+		String s2 = "EWOTTLEWATE";
+	}
+}

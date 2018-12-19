@@ -1,0 +1,15 @@
+package test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import beans.Test;
+
+public class Client {
+
+	ApplicationContext ap = new ClassPathXmlApplicationContext("resources/Spring.xml");
+	
+	Test t = (Test) ap.getBean("t");
+	
+	t.hello("Rohan");
+}

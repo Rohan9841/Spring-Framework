@@ -1,0 +1,50 @@
+package beans;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Test {
+	
+	private List fruits;
+	private Set criketers;
+	private Map cc;
+	
+//	public Test()
+//	{
+//		System.out.println("Test object created");
+//	}
+	
+	public void setFruit(List f)
+	{
+		fruits = f;
+	}
+	
+	public void setCriceters(Set c)
+	{
+		criketers = c;
+	}
+	
+	public void setCountryCapitals(Map ccap)
+	{
+		cc = ccap;
+	}
+	
+	public void printDetails()
+	{
+		for(Object f: fruits)
+		{
+			System.out.println(f);
+		}
+		
+		for(Object c: criketers)
+		{
+			System.out.println(c);
+		}
+		
+		for(Object cap: cc.keySet())
+		{
+			System.out.println("Country ="+cap + ":capital" + cc.get(cap));
+		}
+	}
+}

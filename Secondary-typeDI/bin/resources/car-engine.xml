@@ -1,0 +1,21 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<!-- We don't need to load two xml files if we use nested beans -->		  
+<beans>
+
+	<bean id = "c" class = "beans.Car">
+		
+		<property name = "carname" value = "Audi"/>
+		<property name = "engine">
+		
+			<bean class = "beans.Engine">
+			
+				<property name = "modelyear" value = "2015"></property>
+			
+			</bean>
+		
+		</property>
+	
+	</bean>
+
+</beans>

@@ -1,0 +1,24 @@
+package test;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class Client {
+	
+	public static void main (String[] args)
+	{	
+		//check xml document and instantiate the singleton beans
+		ApplicationContext ap = new ClassPathXmlApplicationContext("resources/spring.xml");
+		
+		//creating test class object. The id was "t" in our xml file  
+		f.getBean("t");
+		f.getBean("t");
+		f.getBean("t");
+		
+	}
+}
+	
