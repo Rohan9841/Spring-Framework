@@ -1,0 +1,136 @@
+package findKthTermSortedArray;
+
+public class FindKTerm {
+	
+	private int[] array1;
+	private int[] array2;
+	int m;
+	int n;
+	int k;
+	
+	int f;
+	
+	public FindKTerm(int[]a, int[]b, int c)
+	{
+		array1 = a;
+		array2 = b;
+		m = a.length;
+		n = b.length;
+		k =c;
+	}
+	
+	public int getMid1()
+	{
+		return (m+1)/2;
+	}
+	
+	public int findTerm(int mid1, int mid2)
+	{	
+		if(k == 1 && mid1 == 1 && mid2 ==1)
+		{
+			System.out.println("passed through mid1 == 1, mid2 ==1, k ==1");
+			if(array1[mid1 - 1] < array2[mid2 - 1])
+			{
+				f = array1[mid1 - 1];
+			}
+			else
+			{
+				f = array2[mid2 - 1];
+			}
+			
+		}
+		
+		else if((mid1 + mid2) < k)
+		{	
+			System.out.println("passed through mid1 + mid2 < k");
+			if(array1[mid1 - 1] >= array2[mid2 - 1])
+			{
+				if(mid2 < n)
+				{
+					mid2 = (mid2+1+n)/2;
+				}
+				else
+				{
+					mid1 = (mid1+1)/2;
+				}
+			}
+			else
+			{
+				if(mid1 < m)
+				{
+					mid1 = (mid1+1+m)/2;
+				}
+				else
+				{
+					mid2 = (mid2+1)/2;
+				}
+			}
+			
+			findTerm(mid1, mid2);
+		}
+		
+		else if ((mid1 + mid2) > k)
+		{
+			System.out.println("passed through mid1 + mid2 > k");
+			if(array1[mid1 - 1] >= array2[mid2 - 1])
+			{
+				if(mid1>1)
+				{
+					mid1 = (mid1+1)/2;
+				}
+				else
+				{
+					mid2 = (mid2+1)/2;
+				}
+			}
+			else
+			{
+				if(mid2 > 1)
+				{
+					mid2 = (mid2+1)/2;
+				}
+				else
+				{
+					mid1 = (mid1+1)/2;
+				}
+			}
+			
+			findTerm(mid1, mid2);
+		}
+		
+		else if ((mid1 + mid2) == k)
+		{
+			System.out.println("passed through mid1 + mid2 == k");
+			int max = Math.max(mid1, mid2);
+			
+			if(k>max)
+			{
+				if(array1[mid1 - 1] > array2[mid2 - 1])
+				{
+					f = array1[mid1 - 1];
+				}
+				else
+				{
+					f = array2[mid2 - 1];
+				}
+			}
+			else
+			{
+				if(array1[mid1 - 1] < array2[mid2 - 1])
+				{
+					f = array1[mid1 - 1];
+				}
+				else
+				{
+					f = array2[mid2 - 1];
+				}
+			}
+			
+		}
+		else 
+		{
+			f = 1010101;
+		}
+		return f;
+	}
+}

@@ -1,0 +1,62 @@
+package findKthTermSortedArray;
+
+public class FindKTerm {
+	
+	private int[] array1;
+	private int[] array2;
+	int m;
+	int n;
+	public FindKTerm(int[]a, int[]b)
+	{
+		array1 = a;
+		array2 = b;
+		m = array1.length;
+		n = array2.length;
+	}
+	
+	public int findTerm(int a, int b)
+	{	
+		
+		int mid1 = a;
+		int mid2 = 0;
+		
+		if(k == 1 && mid1 == 1 && mid2 ==1)
+		{
+			if(array1[mid1 - 1] < array2[mid2 - 1])
+			{
+				return array1[mid1 - 1];
+			}
+			else
+			{
+				return array2[mid2 - 1];
+			}
+		}
+		
+		else if((mid1 + mid2) < k)
+		{
+			if(array1[mid1 - 1] >= array2[mid2 - 1])
+			{
+				if(mid2 < n)
+				{
+					mid2 = (mid2+1+n)/2;
+				}
+				else
+				{
+					mid1 = (mid1+1)/2;
+				}
+			}
+			else
+			{
+				if(mid1 < m)
+				{
+					mid1 = (mid1+1+m)/2;
+				}
+				else
+				{
+					mid2 = (mid2+1)/2;
+				}
+			}
+			findTerm()
+		}
+	}
+}
