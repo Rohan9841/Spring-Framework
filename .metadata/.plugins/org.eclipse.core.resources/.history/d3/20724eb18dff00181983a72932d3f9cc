@@ -1,9 +1,0 @@
-<!--DTD validates the xml file-->
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-
-<!--This is the root tag-->		  
-<beans>
-	<!-- Giving id = t to the bean. The will store Test class from beans package. --> 
-	<bean id = "t" class = "beans.Test" scope = "prototype"></bean>
-</beans>

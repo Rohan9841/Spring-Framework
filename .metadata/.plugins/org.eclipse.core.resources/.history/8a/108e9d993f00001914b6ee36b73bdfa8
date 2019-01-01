@@ -1,7 +1,0 @@
-package test;
-
-public class Client {
-	
-	Class c = Class.forName("beans.Test");
-	
-}

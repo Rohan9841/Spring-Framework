@@ -1,0 +1,16 @@
+<beans 	xmlns= "http://www.springframework.org/schema/beans"
+		xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:p = "http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+		
+		<!-- passing value for setter using p-namsepace -->
+		<bean id = "c" class = "beans.Car" p:car ="Audi" p:eng-ref="e"></bean>
+		
+		<!-- passing value for constructor using c-namespace  -->
+		<bean id = "e" class = "beans.Engine">
+			<constructor-arg value = "2015" index = "0"/>
+		</bean>
+					
+</beans>
+
+

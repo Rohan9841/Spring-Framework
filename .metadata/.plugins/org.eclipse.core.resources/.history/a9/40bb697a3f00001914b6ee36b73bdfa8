@@ -1,7 +1,0 @@
-package beans;
-
-public class Client {
-	
-	Class.forName("beans)
-	
-}

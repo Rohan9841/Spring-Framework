@@ -1,4 +1,0 @@
-driverclass = oracle.jdbc.oracledriver
-url = oracleUrl
-user = System
-Password = Admin
