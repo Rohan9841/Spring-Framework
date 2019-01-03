@@ -1,0 +1,29 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		  
+<beans>
+
+	<!--We can have any number of beans when using autowire = "byName"  -->
+	
+	<bean id = "e1" class = "beans.Engine">
+		<property name = "year" value = "2015"></property>
+	</bean>
+	
+	<bean id = "e2" class = "beans.Engine">
+		<property name = "year" value = "2016"></property>
+	</bean>
+	
+	<bean id = "e3" class = "beans.Engine">
+		<property name = "year" value = "2017"></property>
+	</bean>
+	
+	<bean id = "engine" class = "beans.Engine">
+		<property name = "year" value = "2018"></property>
+	</bean>
+	
+	<!-- searches for Engine class with id = engine because we have setEngine -->
+	<bean id = "c" class = "beans.Car" autowire = "byName">
+	
+	</bean>
+	
+</beans>

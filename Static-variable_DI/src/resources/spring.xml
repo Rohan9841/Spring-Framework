@@ -1,0 +1,21 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+		
+<beans>
+	<bean id = "c" class = 'beans.Car'/>
+	
+	<!-- This class has methods to set value of static method -->
+	<bean class = "org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<!-- staticMethod is a method of methodinvokingFactoryBean class where we pass Car.setName as value because it is a static method -->
+		<property name = "staticMethod">
+			<value>beans.Car.setName</value>
+		</property>
+		
+		<!--This is also a method of MethodInvokingFactoryBean class which takes in array of Objects as value that will be passed to static method above  -->
+		<property name = "arguments">
+			<list>
+				<value>Audi</value>
+			</list>
+		</property>
+	</bean>
+</beans>

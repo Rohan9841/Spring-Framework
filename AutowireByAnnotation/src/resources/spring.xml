@@ -1,0 +1,24 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		  
+<beans>
+
+	<!-- Active autowire annotation -->
+	<bean class = "org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	<bean id = "e1" class = "beans.Engine">
+		<property name = "year" value = "2020"/>
+	</bean>
+	
+	<!-- This will work because in Car class we have qualifier as e2 -->
+	<bean id = "e2" class = "beans.Engine">
+		<property name = "year" value = "2025"/>
+	</bean>
+	
+	<bean id = "e3" class = "beans.Engine">
+		<property name = "year" value = "2030"/>
+	</bean>
+	
+	<bean id = "c" class = "beans.Car" />
+	
+</beans>

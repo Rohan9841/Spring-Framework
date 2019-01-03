@@ -1,0 +1,18 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		  
+<beans>
+	<bean id = "e1" class = "beans.Engine">
+		<property name = "year" value = "2015"></property>
+	</bean>
+	
+	<!-- There will be no ambiguity if this bean is not candidate for autowire -->
+	<bean id = "e2" class = "beans.Engine" autowire-candidate = "false">
+		<property name = "year" value = "2015"></property>
+	</bean>
+	
+	<!-- searches for Engine class in this file -->
+	<bean id = "c" class = "beans.Car" autowire = "byType">
+	
+	</bean>
+</beans>

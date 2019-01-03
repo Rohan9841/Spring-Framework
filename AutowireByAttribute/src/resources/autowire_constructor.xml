@@ -1,0 +1,29 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		  
+<beans>
+
+	<!--autowire = "constructor" will search default byType. But to prevent ambiguity we need autowire-candidate   -->
+	
+	<bean id = "e1" class = "beans.Engine" autowire-candidate = "false">
+		<property name = "year" value = "2015"></property>
+	</bean>
+	
+	<bean id = "e2" class = "beans.Engine">
+		<property name = "year" value = "2016"></property>
+	</bean>
+	
+	<bean id = "e3" class = "beans.Engine" autowire-candidate = "false">
+		<property name = "year" value = "2017"></property>
+	</bean>
+	
+	<bean id = "e" class = "beans.Engine" autowire-candidate = "false">
+		<property name = "year" value = "2018"></property>
+	</bean>
+	
+	<!-- searches for Engine class because we have constructor type is Engine in Bus.java -->
+	<bean id = "b" class = "beans.Bus" autowire = "constructor">
+	
+	</bean>
+	
+</beans>

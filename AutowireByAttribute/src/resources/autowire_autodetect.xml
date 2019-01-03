@@ -1,0 +1,30 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		  
+<beans>
+
+	<!--By default, autodetect will use byType -->
+	
+	<bean id = "e1" class = "beans.Engine">
+		<property name = "year" value = "2015"></property>
+	</bean>
+	
+	<bean id = "e2" class = "beans.Engine">
+		<property name = "year" value = "2016"></property>
+	</bean>
+	<!-- eng is the argument of parameterized  constructor. -->
+	<bean id = "eng" class = "beans.Engine">
+		<property name = "year" value = "2017"></property>
+	</bean>
+	
+	<bean id = "en" class = "beans.Engine">
+		<property name = "year" value = "2018"></property>
+	</bean>
+	
+	<!--if bus.java has no parameter constructor, it will look for setter. But if only has parameterized constructor then it will use that.
+		The setter method must have parameter equal to bean id, here it is 'en'. If we call byName then bean id must equal to name of setter i.e name in setName -->
+	<bean id = "b" class = "beans.Bus" autowire = "autodetect">
+	
+	</bean>
+	
+</beans>
