@@ -1,0 +1,18 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+		  
+<beans>
+	
+	<!-- Necessary for static setter method -->
+	<bean class = "org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name = "staticMethod" value = "beans.CarFactory_static.setCar"/>
+		<property name = "arguments">
+			<list>
+				<value>beans.Honda</value> <!-- beans.Audi because we need package as well when we pass carName in getCar() method -->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- This executes the getCar method of CarFactory_static class which will return Audi class -->
+	<bean id = "cf" class = "beans.CarFactory_static" factory-method = "getCar"/>
+</beans>
